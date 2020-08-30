@@ -1,11 +1,12 @@
 <template>
   <div>
-    <el-card class="card">
-      <div slot="header">
-        <span>123</span>
+    <el-card class="card" shadow="hover">
+      <div slot="header" align="left">
+        <span>{{todo.user}}</span>
+        <el-button class="button" type="text">delete</el-button>
       </div>
       <div>
-
+        <span>{{todo.message}}</span>
       </div>
     </el-card>
   </div>
@@ -14,18 +15,16 @@
 <script>
 export default {
   name: 'Todo',
-  props: {},
-  data () {
-    return {
-
-    }
-  }
+  props: ['todo']
 }
 </script>
 
 <style>
-  .card{
+  .card {
     width: 350px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .button{
+    float: right;
   }
 </style>

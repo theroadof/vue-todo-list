@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="todo of todos" :key="todos.indexOf(todo)">
-      <Todo/>
+      <Todo class="list" v-bind:todo="todo"/>
     </div>
   </div>
 </template>
@@ -13,7 +13,13 @@ export default {
   name: 'TodoList',
   components: {Todo},
   computed: mapState({
-    todos: $store => $store.todoList.state.todos
+    todos: state => state.todoList.todos
   })
 }
 </script>
+
+<style>
+  .list{
+    display: inline-block;
+  }
+</style>

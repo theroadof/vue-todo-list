@@ -20,8 +20,8 @@ export default {
     }
   },
   methods: {
-    submit (userInput, message) {
-      this.$store.dispatch('todoList/createTodo', {user: userInput, message: message})
+    submit () {
+      this.$store.dispatch('todoList/createTodo', {user: this.userInput, message: this.message})
     }
   }
 }

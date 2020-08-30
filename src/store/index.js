@@ -1,13 +1,14 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, {createLogger} from 'vuex'
 import todoList from './modules/TodoList'
 
 Vue.use(Vuex)
 
-const store = new Vue({
+const debug = process.env.NODE_ENV !== 'production'
+
+export default new Vuex.Store({
   modules: {
     todoList
-  }
+  },
+  plugins: debug ? [createLogger()] : []
 })
-
-export default store
