@@ -3,16 +3,17 @@
     <el-card class="card" shadow="hover">
       <div slot="header" align="left">
         <span>{{todo.user}}</span>
-        <el-button class="button" type="text" v-on:click="done">read</el-button>
+        <el-button class="button" type="text" v-on:click="isDone">read</el-button>
       </div>
       <div>
-        <span v-bind:class="{doneMessage: seen}">{{todo.message}}</span>
+        <span :class="{doneMessage: this.seen}">{{todo.message}}</span>
       </div>
     </el-card>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'Todo',
   props: ['todo'],
@@ -22,10 +23,8 @@ export default {
     }
   },
   methods: {
-    done: () => {
-      console.log(this.seen)
+    isDone () {
       this.seen = !this.seen
-      console.log(this.seen)
     }
   }
 }
