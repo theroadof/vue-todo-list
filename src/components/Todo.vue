@@ -18,7 +18,7 @@ export default {
   props: ['todo'],
   data () {
     return {
-      seen: true
+      seen: false
     }
   },
   methods: {

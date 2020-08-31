@@ -16,6 +16,10 @@ export default new Router({
       path: '/todo',
       name: 'TodoPage',
       component: TodoPage
+    },
+    {
+      path: ':outside',
+      name: 'outside'
     }
   ]
 })
