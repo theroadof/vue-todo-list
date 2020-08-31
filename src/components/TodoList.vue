@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="todo of todos" :key="todos.indexOf(todo)">
-      <Todo class="list" v-bind:todo="todo"/>
+      <Todo class="list" v-bind:todo="todo" v-bind:done="false"/>
     </div>
   </div>
 </template>

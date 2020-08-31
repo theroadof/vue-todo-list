@@ -16,15 +16,16 @@
 
 export default {
   name: 'Todo',
-  props: ['todo'],
+  props: ['todo', 'done'],
   data () {
     return {
-      seen: false
+      seen: this.done
     }
   },
   methods: {
     isDone () {
       this.seen = !this.seen
+      this.$store.dispatch('doneTodo/isDone', {todo: this.todo, seen: this.seen})
     }
   }
 }
