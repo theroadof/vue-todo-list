@@ -14,7 +14,10 @@ export default {
   components: {Todo},
   computed: mapState({
     todos: state => state.todoList.todos
-  })
+  }),
+  beforeMount () {
+    //
+  }
 }
 </script>
 

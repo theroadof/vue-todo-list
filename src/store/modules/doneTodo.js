@@ -13,7 +13,12 @@ const mutations = {
     state.doneTodos.push(data)
   },
   remove (state, data) {
-    state.doneTodos = state.doneTodos.filter(todo => (todo.key === data.key))
+    state.doneTodos.forEach((todo, index, arr) => {
+      console.log('data key:' + data.id + ' -- todo key:' + todo.id)
+      if (todo.id === data.id) {
+        arr.splice(index, 1)
+      }
+    })
   }
 }
 
